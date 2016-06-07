@@ -32,7 +32,7 @@ public class ApplicationTest {
     public void shouldListAllBooksInTheLibraryWhenWelcomeMessageHasBeenDisplayed() {
         application.start();
 
-        verify(library).list();
+        verify(library).displayBookList();
     }
 
 
