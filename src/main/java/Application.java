@@ -12,7 +12,7 @@ public class Application {
 
     public void start() {
         displayWelcomeMessage();
-        library.displayBookList();
+        library.displayBookDetails();
     }
 
     private void displayWelcomeMessage() {

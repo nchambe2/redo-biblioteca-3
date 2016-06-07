@@ -1,4 +1,3 @@
-import com.sun.javaws.jnl.LibraryDesc;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -32,7 +31,7 @@ public class ApplicationTest {
     public void shouldListAllBooksInTheLibraryWhenWelcomeMessageHasBeenDisplayed() {
         application.start();
 
-        verify(library).displayBookList();
+        verify(library).displayBookDetails();
     }
 
 
