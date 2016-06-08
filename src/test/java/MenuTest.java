@@ -7,7 +7,6 @@ import java.util.Map;
 
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
-import static org.mockito.Mockito.when;
 
 public class MenuTest {
 
@@ -28,17 +27,17 @@ public class MenuTest {
     }
 
     @Test
-    public void shouldDisplayListBookOptionWhenMenuIsDisplayed(){
+    public void shouldPrintListBooksWhenMenuIsDisplayed(){
         menu.display();
 
         verify(listBookCommand).name();
     }
 
     @Test
-    public void shouldDisplayListBooksOptionWhenUserSelectsOptionOne(){
+    public void shouldDisplayAllOfTheBookDetailsInTheLibraryWhenUserSelectsOptionOne(){
         menu.execute("1");
 
-        verify(library).displayBookDetails();
+        verify(listBookCommand).run();
     }
 
     @Test

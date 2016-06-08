@@ -22,15 +22,20 @@ public class Menu {
 
 
     public void execute(String userSelection) {
-        if(userSelection.equals("1")) {
-            library.displayBookDetails();
-        } else {
-            displayMessage("Select a valid option!");
-        }
+            if(validUserSelection(userSelection)) {
+                runLibraryCommand(userSelection);
+            } else {
+                printStream.println("Select a valid option!");
+            }
     }
 
-    private void displayMessage(String message) {
-        printStream.println(message);
+    private void runLibraryCommand(String userSelection) {
+        libraryCommands.get(userSelection).run();
     }
+
+    private boolean validUserSelection(String userSelection) {
+        return libraryCommands.containsKey(userSelection);
+    }
+
 
 }
