@@ -15,4 +15,8 @@ public class Book {
 
         return String.join(" | ", title, author, yearPublished);
     }
+
+    public String getTitle() {
+        return  title;
+    }
 }

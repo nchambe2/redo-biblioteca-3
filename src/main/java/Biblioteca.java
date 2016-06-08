@@ -9,19 +9,22 @@ import java.util.Map;
 public class Biblioteca {
     public static void main(String[] args) {
         PrintStream printstream = new PrintStream(System.out);
-        List<Book> bookList = new ArrayList<>();
+        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+        List<Book> checkedInBooks = new ArrayList<>();
+        List<Book> checkedOutBooks = new ArrayList<>();
         Book bookOne = new Book("Parable of the Sower", "Octavia Butler", "1993");
         Book bookTwo = new Book("Game of Thrones: A Story of Fire and Ice", "George R. R. Martin", "1996");
-        bookList.add(bookOne);
-        bookList.add(bookTwo);
-        Library library = new Library(bookList, printstream);
+        checkedInBooks.add(bookOne);
+        checkedInBooks.add(bookTwo);
+        Library library = new Library(checkedInBooks, checkedOutBooks, printstream, bufferedReader);
         Map<String, Command> libraryCommands = new HashMap<>();
         Command quitCommand = new QuitCommand();
         Command listBookCommand = new ListBookCommand(library);
+        Command checkOutBookCommand = new CheckoutBookCommand(library);
         libraryCommands.put("0", quitCommand);
         libraryCommands.put("1", listBookCommand);
+        libraryCommands.put("2", checkOutBookCommand);
         Menu menu = new Menu(printstream, library, libraryCommands);
-        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
         Application application = new Application(printstream, menu, bufferedReader);
         application.start();
     }
