@@ -11,7 +11,6 @@ import static org.mockito.Mockito.*;
 public class ApplicationTest {
 
     private Application application;
-    private Library library;
     private PrintStream printStream;
     private Menu menu;
     private BufferedReader bufferedReader;
@@ -26,7 +25,6 @@ public class ApplicationTest {
 
     @Test
     public void shouldDisplayWelcomeMessageWhenApplicationStarts() {
-
         application.start();
         verify(printStream).println("Welcome to Biblioteca");
     }
@@ -46,6 +44,8 @@ public class ApplicationTest {
 
         verify(menu).execute("1");
     }
+
+
 
 
 }

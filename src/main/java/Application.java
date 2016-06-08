@@ -15,10 +15,14 @@ public class Application {
     }
 
     public void start() {
+        String userOption = "";
         displayWelcomeMessage();
-        menu.display();
-        String userOption = getUserInput();
-        menu.execute(userOption);
+
+        while(!userOption.equals("0")) {
+            menu.display();
+            userOption = getUserInput();
+            menu.execute(userOption);
+        }
     }
 
     private void displayWelcomeMessage() {
