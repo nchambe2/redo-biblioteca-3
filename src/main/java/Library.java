@@ -16,13 +16,13 @@ public class Library {
     }
 
     private String list() {
-        String bookTitle = "";
+        String titleAuthorYearPublished = "";
 
         for (Book book : bookList) {
-            bookTitle += book.details();
+            titleAuthorYearPublished += book.details() + "\n";
         }
 
-        return bookTitle;
+        return titleAuthorYearPublished;
     }
 
 

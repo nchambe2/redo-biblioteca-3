@@ -16,7 +16,7 @@ public class Menu {
 
     public void display() {
         for(String key : libraryCommands.keySet()) {
-            printStream.println(key + ". " + libraryCommands.get(key).name() + "\n");
+            printStream.println(key + ". " + libraryCommands.get(key).name());
         }
     }
 

@@ -18,11 +18,15 @@ public class Application {
         String userOption = "";
         displayWelcomeMessage();
 
-        while(!userOption.equals("0")) {
+        while(userHasNotQuit(userOption)) {
             menu.display();
             userOption = getUserInput();
             menu.execute(userOption);
         }
+    }
+
+    private boolean userHasNotQuit(String userOption) {
+        return !userOption.equals("0");
     }
 
     private void displayWelcomeMessage() {
